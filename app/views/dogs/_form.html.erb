@@ -1,0 +1,62 @@
+<%= form_for(dog) do |f| %>
+  <% if dog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dog.errors.count, "error") %> prohibited this dog from being saved:</h2>
+
+      <ul>
+      <% dog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :genre %>
+    <%= f.text_field :genre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :castrated %>
+    <%= f.text_field :castrated %>
+  </div>
+
+  <div class="field">
+    <%= f.label : %>
+    <%= f.check_box : %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %>
+    <%= f.date_select :birthday %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :owner_name %>
+    <%= f.text_field :owner_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :owner_fone %>
+    <%= f.text_field :owner_fone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_date %>
+    <%= f.date_select :last_date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
