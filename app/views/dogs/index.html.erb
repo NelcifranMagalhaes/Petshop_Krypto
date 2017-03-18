@@ -1,6 +1,42 @@
 <p id="notice"><%= notice %></p>
 
+  <%= form_tag(dogs_path, method: "get") do |f| %>
+  <div class="fields">
+    <div class = "field">
+      <%=select_tag "genre", options_for_select([ "Fêmea", "Macho" ],params[:genre]),prompt: "Select something" %>
+
+    </div>
+
+    <div class = "field">
+
+      <%=select_tag "breed", options_for_select(@breeds,params[:breed]),prompt: "Select something" %>
+
+    </div>
+
+    <div class="field">
+      <%= text_field_tag :name, nil, value: params[:name], placeholder: "Nome", id: "nome" %>
+    </div>
+  </div>
+  <div class="fields">
+    <div class="field">
+      <%= select_tag :castrated,options_for_select([ "Sim", "Não" ]),prompt: "Select something" %>
+    </div>
+      <div class="field">
+      <%= text_field_tag :owner, nil, value: params[:owner], placeholder: "dono", id: "dono" %>
+    </div>
+    <div class="field">
+      <%= submit_tag "Pesquisar"%>
+    </div>
+  </div>
+<% end %>
+
+
 <h1>Dogs</h1>
+
+<div>
+  <%= will_paginate @dogs,class: "apple_pagination", :page_links => true%>
+</div>
+
 
 <table>
   <thead>
@@ -8,7 +44,6 @@
       <th>Breed</th>
       <th>Genre</th>
       <th>Castrated</th>
-      <th></th>
       <th>Birthday</th>
       <th>Name</th>
       <th>Owner name</th>
@@ -24,7 +59,6 @@
         <td><%= dog.breed %></td>
         <td><%= dog.genre %></td>
         <td><%= dog.castrated %></td>
-        <td><%= dog. %></td>
         <td><%= dog.birthday %></td>
         <td><%= dog.name %></td>
         <td><%= dog.owner_name %></td>

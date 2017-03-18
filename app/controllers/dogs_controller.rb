@@ -1,10 +1,34 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
+  before_action :set_breeds,only:[:index,:create]
 
   # GET /dogs
   # GET /dogs.json
   def index
+    @genre =  params[:genre]
+    @name = params[:name]
+    @castrated = params[:castrated]
+    @owner_name = params[:owner]
+    @breed = params[:breed]
+
+
     @dogs = Dog.all
+
+    if @genre.present? || @name.present? || @castrated.present? || @owner_name.present? || @breed.present? 
+
+      @dogs = @dogs.where(genre: @genre ) unless @genre.blank?
+      @dogs = @dogs.where(name: @name) unless @name.blank?
+      @dogs = @dogs.where(owner_name: @owner_name) unless @owner_name.blank?
+
+      @dogs = @dogs.where(castrated: @castrated == 'Sim' ? true : false) unless @castrated.blank?
+
+      @dogs = @dogs.where(breed: @breed) unless @breed.blank?
+
+    end
+
+    @dogs = @dogs.order(birthday: :desc)
+    @dogs = @dogs.paginate(:page => params[:page], :per_page => 20) 
+
   end
 
   # GET /dogs/1
@@ -62,6 +86,12 @@ class DogsController < ApplicationController
   end
 
   private
+    def set_breeds
+
+      @breeds = Dog.pluck('DISTINCT breed')
+
+
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_dog
       @dog = Dog.find(params[:id])
@@ -69,6 +99,6 @@ class DogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
-      params.require(:dog).permit(:breed, :genre, :castrated, :, :birthday, :name, :owner_name, :owner_fone, :last_date)
+      params.require(:dog).permit(:breed, :genre, :castrated, :birthday, :name, :owner_name, :owner_fone, :last_date)
     end
 end
