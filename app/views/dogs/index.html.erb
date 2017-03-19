@@ -65,14 +65,14 @@
 <table class="bootstrap-table">
   <thead>
     <tr>
-      <th class="text-center" data-valign="middle">Breed</th>
-      <th class="text-center" data-valign="middle">Genre</th>
-      <th class="text-center" data-valign="middle">Castrated</th>
-      <th class="text-center" data-valign="middle">Birthday</th>
-      <th class="text-center" data-valign="middle">Name</th>
-      <th class="text-center" data-valign="middle">Owner name</th>
-      <th class="text-center" data-valign="middle">Owner fone</th>
-      <th class="text-center" data-valign="middle">Last date</th>
+      <th class="text-center" data-valign="middle">Raça</th>
+      <th class="text-center" data-valign="middle">Gênero</th>
+      <th class="text-center" data-valign="middle">Castrado?</th>
+      <th class="text-center" data-valign="middle">Data de Nascimento</th>
+      <th class="text-center" data-valign="middle">Nome</th>
+      <th class="text-center" data-valign="middle">Nome do dono</th>
+      <th class="text-center" data-valign="middle">Telefone do dono</th>
+      <th class="text-center" data-valign="middle">Ultima visita</th>
       <th class="text-center"  colspan="3" data-valign="middle"></th>
     </tr>
   </thead>
@@ -82,15 +82,38 @@
       <tr>
         <td><%= dog.breed %></td>
         <td><%= dog.genre %></td>
-        <td><%= dog.castrated %></td>
+          
+        <%if dog.castrated == true%>
+          <td>  Sim </td>
+
+          <%else%> 
+
+          <td> Não </td>
+
+        <% end %>
+
         <td><%= l dog.birthday %></td>
         <td><%= dog.name %></td>
         <td><%= dog.owner_name %></td>
         <td><%= dog.owner_fone %></td>
         <td><%= l dog.last_date %></td>
-        <td><%= link_to 'Show', dog %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to dog do%>
+          <i class="fa fa-eye"></i>
+          <% end %>
+        </td>
+
+        <td><%= link_to edit_dog_path(dog) do%>
+          <i class="fa fa-edit"></i>
+          <% end %>
+        </td>
+        
+        <td><%= link_to dog, method: :delete, data: { confirm: 'Vc tem certeza?' } do%>
+            
+          <i class="fa fa-close"></i>
+
+          <% end %>
+
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -99,6 +122,7 @@
 <br>
 </div>
 </div>
-<%= link_to 'New Dog', new_dog_path %>
+<%= link_to 'Novo Cachorro', new_dog_path ,:class =>'btn btn-success'%>
 </div>
 </div>
+

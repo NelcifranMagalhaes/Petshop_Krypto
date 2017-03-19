@@ -1,45 +1,108 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+<div class="row">
 
-<p>
-  <strong>Breed:</strong>
-  <%= @dog.breed %>
-</p>
+<div class="col-md-2">
+  
+<pre>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @dog.genre %>
-</p>
+    <p>
+      <strong>Raça:</strong>
+      <%= @dog.breed %>
+    </p>
+</pre>
 
-<p>
-  <strong>Castrated:</strong>
-  <%= @dog.castrated %>
-</p>
+<pre>
+
+    <p>
+      <strong>Última visita:</strong>
+      <%= @dog.last_date %>
+    </p>
+</pre>
+</div>
 
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @dog.birthday %>
-</p>
+<div class="col-md-2">
+  
+<pre>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dog.name %>
-</p>
+    <p>
+      <strong>Gênero:</strong>
+      <%= @dog.genre %>
+    </p>
 
-<p>
-  <strong>Owner name:</strong>
-  <%= @dog.owner_name %>
-</p>
+</pre>
 
-<p>
-  <strong>Owner fone:</strong>
-  <%= @dog.owner_fone %>
-</p>
 
-<p>
-  <strong>Last date:</strong>
-  <%= @dog.last_date %>
-</p>
+<pre>
 
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+    <p>
+      <strong>Castrado ?:</strong>
+      
+    <%if @dog.castrated == true%>
+               Sim
+
+        <%else%> 
+
+             Não 
+
+    <% end %>
+    </p>
+
+    </pre>
+
+</div>
+
+
+<div class="col-md-2">
+  
+<pre>
+  
+    <p>
+      <strong>Nascimento:</strong>
+      <%= @dog.birthday %>
+    </p>
+</pre>
+
+<pre>
+
+    <p>
+      <strong>Nome:</strong>
+      <%= @dog.name %>
+    </p>
+</pre>
+
+</div>
+
+<div class="col-md-3">
+<pre>
+  
+    <p>
+      <strong>Nome do dono:</strong>
+      <%= @dog.owner_name %>
+    </p>
+
+</pre>
+
+<pre>
+
+    <p>
+      <strong>Telefone do dono:</strong>
+      <%= @dog.owner_fone %>
+    </p>
+</pre>
+
+
+
+</div>
+
+<div class="col-md-1">
+
+    <%= link_to 'Editar', edit_dog_path(@dog) ,:class => 'btn btn-warning'%> <strong>Ou</strong>
+
+    <%= link_to 'Voltar', dogs_path ,:class => 'btn btn-info'%>
+</div>
+
+
+  </div>
+</div>

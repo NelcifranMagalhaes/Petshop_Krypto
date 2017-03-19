@@ -4,6 +4,8 @@
 //= require bootstrap
 //= require app
 //= require bootstrap-table
+//= require jquery_ujs
+
 
 $(document).ready(function(){
   $('.bootstrap-table').bootstrapTable({
