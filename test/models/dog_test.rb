@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class DogTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+ 
+test "should not save dogs without name" do
+  dog = Dog.new
+  assert_not dog.save, "Saved the dog without a name"
+end
 end

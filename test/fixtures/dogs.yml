@@ -1,23 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  breed: MyString
-  genre: MyString
-  castrated: MyString
-  : false
+  breed: Vira lata
+  genre: Macho
+  castrated: true
   birthday: 2017-03-16
-  name: MyString
-  owner_name: MyString
-  owner_fone: MyString
+  name: Holandes voador
+  owner_name: David jones
+  owner_fone: 89545852622
   last_date: 2017-03-16
 
 two:
-  breed: MyString
-  genre: MyString
-  castrated: MyString
-  : false
+  breed: Pastor alemão
+  genre: Fêmea
+  castrated: false
   birthday: 2017-03-16
-  name: MyString
-  owner_name: MyString
-  owner_fone: MyString
+  name: Hera
+  owner_name: Adams Eva
+  owner_fone: 0008245655
   last_date: 2017-03-16
