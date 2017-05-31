@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Dog.destroy_all
-puts "Deleted Cachorros"
+puts "Deleted Dogs"
 
 #@racas = ['Pitbull','Vira lata' , 'Barzoi','Basenji', 'Basset Hound', 'Basset artesiano normando','Bichon havanês'
 #	, 'Basset sueco', 'Bichon bolonhês','Braco de Saint Germain', 'Chart polski',
@@ -29,6 +29,6 @@ puts "Deleted Cachorros"
                 )
 end
 
-puts "Created #{Dog.count} Cachorros"
+puts "Created #{Dog.count} Dogs"
 
 
