@@ -1,7 +1,7 @@
 <%= form_for(dog, html: { class: "form-horizonta"} ) do |f| %>
   <% if dog.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(dog.errors.count, "error") %> proibem esse cão de ser adicionado:</h2>
+      <h2><%= pluralize(dog.errors.count, "error") %> errors :</h2>
 
       <ul>
       <% dog.errors.full_messages.each do |message| %>
@@ -15,48 +15,48 @@
    <div class="col-md-8">
 
   <div class="form-group">
-    <%= f.label :breed ,'Raça'%>
+    <%= f.label :breed ,'Breed'%>
     <%= f.text_field :breed ,{ class: 'form-control' }%>
   </div>
 
   <div class="form-group">
-    <%= f.label :genre,'Gênero' %>
-    <%= f.select :genre, [ "Fêmea", "Macho" ],prompt: "Selecione o gênero" ,class:"form-control"%>
+    <%= f.label :genre,'Genre' %>
+    <%= f.select :genre, [ "Female", "Male" ],prompt: "Select a genre" ,class:"form-control"%>
   </div>
 
   <div class="form-group">
-    <%= f.label :castrated ,'Castrado'%>
+    <%= f.label :castrated ,'Castrated'%>
 
     <%= f.check_box :castrated %>
   </div>
 
   <div class="form-group">
-    <%= f.label :birthday ,'Data de Nascimento'%>
+    <%= f.label :birthday ,'Birthday'%>
     <%= f.date_select :birthday ,class:"form-control"%>
   </div>
 
   <div class="form-group">
-    <%= f.label :name ,'Nome'%>
+    <%= f.label :name ,'Name'%>
     <%= f.text_field :name ,class:"form-control"%>
   </div>
 
   <div class="form-group">
-    <%= f.label :owner_name %>
+    <%= f.label :owner_name ,'Owner s name'%>
     <%= f.text_field :owner_name ,class:"form-control"%>
   </div>
 
   <div class="form-group">
-    <%= f.label :owner_fone ,'Telefone do Dono'%>
+    <%= f.label :owner_fone ,'Owner fone'%>
     <%= f.text_field :owner_fone ,class:"form-control"%>
   </div>
 
   <div class="form-group">
-    <%= f.label :last_date ,'Última visita'%>
+    <%= f.label :last_date ,'Last visit'%>
     <%= f.date_select :last_date ,class:"form-control"%>
   </div>
 
   <div class="actions">
-    <%= f.submit 'Adicionar' , :class => 'btn btn-primary btn-sm'%>
+    <%= f.submit 'Add' , :class => 'btn btn-primary btn-sm'%>
   </div>
 
 

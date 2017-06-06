@@ -7,7 +7,7 @@
 <pre>
 
     <p>
-      <strong>Raça:</strong>
+      <strong>Breed:</strong>
       <%= @dog.breed %>
     </p>
 </pre>
@@ -15,7 +15,7 @@
 <pre>
 
     <p>
-      <strong>Última visita:</strong>
+      <strong>Last date:</strong>
       <%= @dog.last_date %>
     </p>
 </pre>
@@ -27,7 +27,7 @@
 <pre>
 
     <p>
-      <strong>Gênero:</strong>
+      <strong>Genre:</strong>
       <%= @dog.genre %>
     </p>
 
@@ -37,14 +37,14 @@
 <pre>
 
     <p>
-      <strong>Castrado ?:</strong>
+      <strong>Castrated ?:</strong>
       
     <%if @dog.castrated == true%>
-               Sim
+               Yes
 
         <%else%> 
 
-             Não 
+             No 
 
     <% end %>
     </p>
@@ -59,7 +59,7 @@
 <pre>
   
     <p>
-      <strong>Nascimento:</strong>
+      <strong>Birthday:</strong>
       <%= @dog.birthday %>
     </p>
 </pre>
@@ -67,7 +67,7 @@
 <pre>
 
     <p>
-      <strong>Nome:</strong>
+      <strong>Name:</strong>
       <%= @dog.name %>
     </p>
 </pre>
@@ -78,7 +78,7 @@
 <pre>
   
     <p>
-      <strong>Nome do dono:</strong>
+      <strong>Owner's name:</strong>
       <%= @dog.owner_name %>
     </p>
 
@@ -87,7 +87,7 @@
 <pre>
 
     <p>
-      <strong>Telefone do dono:</strong>
+      <strong>Owner's fone:</strong>
       <%= @dog.owner_fone %>
     </p>
 </pre>
@@ -98,9 +98,9 @@
 
 <div class="col-md-1">
 
-    <%= link_to 'Editar', edit_dog_path(@dog) ,:class => 'btn btn-warning'%> <strong>Ou</strong>
+    <%= link_to 'Edit', edit_dog_path(@dog) ,:class => 'btn btn-warning'%> <strong>Or</strong>
 
-    <%= link_to 'Voltar', dogs_path ,:class => 'btn btn-info'%>
+    <%= link_to 'Back', dogs_path ,:class => 'btn btn-info'%>
 </div>
 
 
