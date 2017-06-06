@@ -1,4 +1,4 @@
-<%= form_for(breed) do |f| %>
+<%= form_for(breed, html: { class: "form-horizonta"} ) do |f| %>
   <% if breed.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(breed.errors.count, "error") %> prohibited this breed from being saved:</h2>
@@ -11,17 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="row">
+  <div class="col-md-8">
+
+  <div class="form-group">
+    <%= f.label :name ,'Name'%>
+    <%= f.text_field :name ,{ class: 'form-control' }%>
   </div>
 
-  <div class="field">
-    <%= f.label :characteristics %>
-    <%= f.text_area :characteristics %>
+
+  <div class="form-group">
+    <%= f.label :characteristics ,'Characteristics'%>
+    <%= f.text_field :characteristics ,{ class: 'form-control' }%>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Add' , :class => 'btn btn-primary btn-sm'%>
   </div>
+
 <% end %>
+
+</div>
+</div>

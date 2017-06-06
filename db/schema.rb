@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531223035) do
+ActiveRecord::Schema.define(version: 20170606133545) do
 
   create_table "breeds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170531223035) do
     t.date     "last_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "breed_id"
   end
 
 end

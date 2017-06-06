@@ -1,8 +1,21 @@
 <p id="notice"><%= notice %></p>
+<div class="box box-default">
+<div class="box-header with-border">
+    <h3 class="box-title">
+      <strong>
+       Breeds Cadastred
+      </strong>
+    </h3>
+</div>
+
+<div class="box-body">
+
+<div class="row">
+<div class="col-md-12">
 
 <h1>Breeds</h1>
 
-<table>
+<table class="bootstrap-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,14 +29,33 @@
       <tr>
         <td><%= breed.name %></td>
         <td><%= breed.characteristics %></td>
-        <td><%= link_to 'Show', breed %></td>
-        <td><%= link_to 'Edit', edit_breed_path(breed) %></td>
-        <td><%= link_to 'Destroy', breed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= link_to breed do%>
+          <i class="fa fa-eye"></i>
+          <% end %>
+        </td>
+
+        <td><%= link_to edit_breed_path(breed) do%>
+          <i class="fa fa-edit"></i>
+
+        <% end %>
+        </td>
+
+        <td><%= link_to breed, method: :delete, data: { confirm: 'Are you sure?' } do%>
+          
+          <i class="fa fa-close"></i>
+
+          <% end %>
+        </td>
+        
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+</div>
+<%= link_to 'New Breed', new_breed_path ,:class =>'btn btn-success'%>
 
-<%= link_to 'New Breed', new_breed_path %>
+</div>
+</div>
