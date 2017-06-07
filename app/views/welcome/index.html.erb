@@ -20,7 +20,7 @@
       <div class="col-lg-2> col-xs-3">
         <%= link_to dogs_path do %>
 
-          <div class="small-box bg-red">
+          <div class="small-box bg-yellow">
             <div class="inner">
               <h3>List of dogs</h3>
               <p>List of our super dogs.</p>
@@ -36,7 +36,7 @@
       </div>  
 
 
-           <div class="col-lg-2> col-xs-3">
+      <div class="col-lg-2> col-xs-3">
         <%= link_to breeds_path do %>
 
           <div class="small-box bg-red">
@@ -52,7 +52,26 @@
             </div>
           </div>
           <% end %>
-      </div>  
+      </div>
+
+
+      <div class="col-lg-2> col-xs-3">
+        <%= link_to new_breed_path do %>
+
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>New breeds</h3>
+              <p>Add a new race.</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-arrows"></i>
+            </div>
+            <div class="small-box-footer">
+              <i class="fa fa-arrow-circle-right"></i> <span>More info</span>
+            </div>
+          </div>
+          <% end %>
+      </div>   
 
   </div>
 </section>
