@@ -13,6 +13,12 @@
 <div class="row">
 <div class="col-md-12">
 
+<div class="text-center">
+    <div class="row">
+        <%= will_paginate @breeds, :page_links => true ,class: "apple_pagination"%>
+    </div>
+  </div>
+
 <h1>Breeds</h1>
 
 <table class="bootstrap-table">

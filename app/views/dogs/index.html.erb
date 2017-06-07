@@ -80,7 +80,7 @@
   <tbody>
     <% @dogs.each do |dog| %>
       <tr>
-        <td><%= dog.breed %></td>
+        <td><%= dog.breed.name %></td>
         <td><%= dog.genre %></td>
           
         <%if dog.castrated == true%>

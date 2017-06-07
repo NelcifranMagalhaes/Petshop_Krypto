@@ -13,12 +13,27 @@ puts "Deleted Dogs"
 #	, 'Basset sueco', 'Bichon bolonhês','Braco de Saint Germain', 'Chart polski',
 #	'Terrier irlandês','Westie','Spaniel Bretão','Pastor norueguês','Pastor Alemão','Mastim espanhol',
 #'Galgo escocês', 'Dogue argentino','Collie','Thaï Ridgeback']
+Breed.destroy_all
+puts "Deleted Breeds"
+
+200.times do |index|
+	Breed.create!(
+
+	name: Faker::Cat.breed,
+
+	characteristics: Faker::Cat.registry
+
+    )
+
+end
+
+puts "Created #{Breed.count} breeds"
 
 
 
-1000.times do |index|
+500.times do |index|
   Dog.create!(name: Faker::Cat.name,
-              breed: ['Pitbull','Vira lata' , 'Barzoi','Basenji', 'Basset Hound', 'Basset artesiano normando','Bichon havanês', 'Basset sueco', 'Bichon bolonhês','Braco de Saint Germain', 'Chart polski','Terrier irlandês','Westie','Spaniel Bretão','Pastor norueguês','Pastor Alemão','Mastim espanhol','Galgo escocês', 'Dogue argentino','Collie','Thaï Ridgeback'].sample,
+              breed_id: Faker::Number.between(1,199),
                 genre: ['Macho','Fêmea'].sample,
                 castrated:[true,false].sample ,
                 birthday: Faker::Date.between(8.years.ago, Date.today),
