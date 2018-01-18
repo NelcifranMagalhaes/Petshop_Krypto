@@ -187,6 +187,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   mysql2
+  nokogiri
   puma (~> 3.0)
   rails (~> 5.0.2)
   rails-i18n (~> 5.0.0)

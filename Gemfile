@@ -55,7 +55,7 @@ gem "font-awesome-rails"
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
-
+gem 'nokogiri'
 gem 'simple_form'
 
 group :development, :test do
