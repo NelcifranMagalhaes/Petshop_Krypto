@@ -12,25 +12,28 @@
 
 ActiveRecord::Schema.define(version: 20170606133545) do
 
-  create_table "breeds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.text     "characteristics", limit: 65535
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-  create_table "dogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "breed"
-    t.string   "genre"
-    t.boolean  "castrated"
-    t.date     "birthday"
-    t.string   "name"
-    t.string   "owner_name"
-    t.string   "owner_fone"
-    t.date     "last_date"
+  create_table "breeds", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "characteristics"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "breed_id"
+  end
+
+  create_table "dogs", id: :serial, force: :cascade do |t|
+    t.string "breed"
+    t.string "genre"
+    t.boolean "castrated"
+    t.date "birthday"
+    t.string "name"
+    t.string "owner_name"
+    t.string "owner_fone"
+    t.date "last_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "breed_id"
   end
 
 end

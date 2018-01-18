@@ -1,11 +1,11 @@
 
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   pool: 5
-  username: root
+  host: localhost
+  username: postgres
   password: root
-  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
@@ -13,8 +13,8 @@ development:
 
 test:
   <<: *default
-  database: db/kryptoPetshop_test
+  database: kryptoPetshop_test
 
 production:
   <<: *default
-  database: db/kryptoPetshop_production
+  database: kryptoPetshop_production
