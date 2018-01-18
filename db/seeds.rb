@@ -16,7 +16,7 @@ puts "Deleted Dogs"
 Breed.destroy_all
 puts "Deleted Breeds"
 
-200.times do |index|
+20.times do |index|
 	Breed.create!(
 
 	name: Faker::Cat.breed,
@@ -31,9 +31,9 @@ puts "Created #{Breed.count} breeds"
 
 
 
-500.times do |index|
+50.times do |index|
   Dog.create!(name: Faker::Cat.name,
-              breed_id: Faker::Number.between(1,199),
+              breed_id: Faker::Number.between(1,19),
                 genre: ['Macho','Fêmea'].sample,
                 castrated:[true,false].sample ,
                 birthday: Faker::Date.between(8.years.ago, Date.today),

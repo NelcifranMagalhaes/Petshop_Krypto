@@ -5,22 +5,20 @@ class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
   def index
-    @genre =  params[:genre]
     @name = params[:name]
-    @castrated = params[:castrated]
     @owner_name = params[:owner]
     @breed = params[:breed]
 
 
     @dogs = Dog.all
 
-    if @genre.present? || @name.present? || @castrated.present? || @owner_name.present? || @breed.present? 
+    if @genre.present? || @name.present? || @owner_name.present? || @breed.present? 
 
-      @dogs = @dogs.where(genre: @genre ) unless @genre.blank?
+      #@dogs = @dogs.where(genre: @genre ) unless @genre.blank?
       @dogs = @dogs.where(name: @name) unless @name.blank?
       @dogs = @dogs.where(owner_name: @owner_name) unless @owner_name.blank?
 
-      @dogs = @dogs.where(castrated: @castrated == 'Sim' ? true : false) unless @castrated.blank?
+      #@dogs = @dogs.where(castrated: @castrated == 'Sim' ? true : false) unless @castrated.blank?
 
       @dogs = @dogs.where(breed: @breed) unless @breed.blank?
 
@@ -88,8 +86,7 @@ class DogsController < ApplicationController
   private
     def set_breeds
 
-      @breeds = Dog.pluck('DISTINCT breed')
-
+      @breeds = Breed.all
 
     end
     # Use callbacks to share common setup or constraints between actions.
