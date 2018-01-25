@@ -8,6 +8,6 @@ FactoryBot.define do
     owner_name "Deidara"
     owner_fone "88540407"
     last_date "25/02/2015"
-    breed_id "2"
+    breed
   end
 end

@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Dog, type: :model do
-	it 'create a dog' do
-		#breed = create(:breed)
+	it 'Have 1 dog' do
 		dog = create(:dog)
-		expect(dog.name).to eq("deidara_dog")
+		expect(dog.breed).to be_kind_of(Breed)
   	end
 end
