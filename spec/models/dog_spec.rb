@@ -7,9 +7,19 @@ RSpec.describe Dog, type: :model do
   	end
 
 	it "have 3 dogs" do
-		dogs = create_list(:dog,3,owner_name: "unknow owner GG") #i can sobrescribe the atributes of dogs..XD
-		#puts dogs.inspect
+		dogs = create_list(:dog,3)
 		expect(dogs.count).to eq(3)  		
 	end
 
+	it "is valid with all fields" do
+		dog = create(:dog)
+		expect(dog).to be_valid
+	end
+
+	it "is invalid without breed" do
+		dog = build(:dog,breed: nil)
+		dog.valid?
+		expect(dog.errors[:breed]).to include("can't be blank")
+
+	end
 end
