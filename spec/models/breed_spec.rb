@@ -1,8 +1,9 @@
-require 'rails_helper'
+ require 'rails_helper'
 
 RSpec.describe Breed, type: :model do
   	it 'create a breed' do
 		breed = create(:breed)
-		expect(breed.name).to eq("Rockheart")
+		#puts breed.characteristics
+		expect(breed.name).to !match("")
   	end
 end
