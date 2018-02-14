@@ -21,12 +21,13 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 
 gem 'jbuilder', '~> 2.5'
-
+gem 'bcrypt', platforms: :ruby
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem "factory_bot_rails","~> 4.0" 
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -50,6 +51,7 @@ gem 'nokogiri'
 gem 'pg','~> 0.21.0'
 
 gem 'simple_form'
+gem 'devise'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
