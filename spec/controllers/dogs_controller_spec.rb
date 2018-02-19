@@ -26,15 +26,36 @@ RSpec.describe DogsController, type: :controller do
 				
 			end
 
-			it 'valid attributes' do
+			it "Json format with content-type" do
+
 				dog_params = attributes_for(:dog)
 				sign_in @user
+				post :create,format: :json,params: {dog: dog_params}
+				expect(response.content_type).to eq('application/json')  
+			end
+
+			# it "Flash Notice" do
+			# 	dog_params = attributes_for(:dog)
+			# 	sign_in @user
+			# 	post :show,format: :json,params:{id: @dog.id}
+			# 	expect(flash[:notice]).to match(/Dog was successfully created./)  
+			# end
+
+			it 'invalid attributes' do
+				dog_params = attributes_for(:dog,name:nil)
+				sign_in @user
 				expect{
-					post :create ,params: { dog: dog_params}
-					}.to change(Dog,:count).by(1)
+					post :create ,format: :json,params: { dog: dog_params}
+					}.not_to change(Dog,:count)
 				
 			end
-			
+
+	 		it 'routes' do
+               should route(:get, '/dogs').
+               	to(controller: :dogs, action: :index)
+            end
+
+
 		end
 
 end

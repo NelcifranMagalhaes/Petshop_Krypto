@@ -7,3 +7,104 @@
 @import "font-awesome";
 @import "skins/skin-red.min";
 @import "bootstrap-table.min";
+
+@font-face {
+   font-family: 'Glyphicons Halflings';
+   src: url(asset_path('glyphicons-halflings-regular.eot'));
+   src: url(asset_path('glyphicons-halflings-regular.eot?#iefix')) format('embedded-opentype'),
+   url(asset_path('glyphicons-halflings-regular.woff')) format('woff'),
+   url(asset_path('glyphicons-halflings-regular.ttf')) format('truetype'),
+   url(asset_path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular')) format('svg');
+ }
+
+.align-middle {
+  vertical-align: middle !important;
+}
+
+.callout-message {
+  font-size: 14px;
+}
+
+.bootstrap-table3 {
+  th {
+    small {
+      font-size: 70%;
+      display: block;
+    }
+  }
+
+  tbody {
+    @media (min-width: 562px) {
+      td {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.bootstrap-table4 {
+  th {
+    small {
+      font-size: 70%;
+      display: block;
+    }
+  }
+
+  tbody {
+    @media (min-width: 562px) {
+      td {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.card-view {
+  clear: both;
+  .value {
+
+    .text-right {
+      display: '';
+      float: right;
+    }
+
+    .text-block {
+      display: block;
+    }
+  }
+}
+#calendario {
+  .fc-scroller{
+    overflow: unset !important;
+    height: auto !important;
+  }
+  .popover{
+    // z-index: 9999 !important;
+    min-width: 50%;
+    .popover-title{
+      text-align: center;
+    }
+    .popover-content{
+      padding: 9px 15px;
+    }
+  }
+  .fc-time-grid .fc-event-container{z-index: inherit;}
+}
+#container-pop{font-size: 11px;}
+
+@media (min-width: 768px) {
+  .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > span:not(.pull-right),
+  .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
+    display: block !important;
+    position: absolute;
+    width: 245px;
+    left: 50px;
+  }
+  .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > .pull-right-container{
+    left: 265px !important;
+  }
+}
+
+.table tbody tr td .form-group {
+  margin: 0;
+}

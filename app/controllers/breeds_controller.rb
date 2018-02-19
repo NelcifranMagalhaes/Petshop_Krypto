@@ -1,5 +1,6 @@
 class BreedsController < ApplicationController
   before_action :set_breed, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
 
   # GET /breeds
   # GET /breeds.json
