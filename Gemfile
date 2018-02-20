@@ -28,6 +28,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem "factory_bot_rails","~> 4.0" 
   gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 3.7'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
@@ -57,8 +59,3 @@ gem 'simple_form'
 gem 'devise'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 
-
-group :development, :test do
-  gem 'rspec-rails', '~> 3.7'
-  gem 'shoulda-matchers', '~> 3.1'
-end
