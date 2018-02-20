@@ -7,7 +7,6 @@ FactoryBot.define do
     birthday Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today)
     owner_name Faker::Name.name
     owner_fone Faker::PhoneNumber.phone_number
-    last_date Faker::Date.forward(23)
     breed
   end
 end
