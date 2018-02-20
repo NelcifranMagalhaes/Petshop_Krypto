@@ -1,6 +1,5 @@
 class Dog < ApplicationRecord
 
-
 	validates :breed, presence: true
 	validates :genre ,presence: true
 	validates :birthday ,presence: true

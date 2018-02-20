@@ -16,7 +16,7 @@
     <div class="row">
 
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <%= f.association :breed , label_method: :name, value_method: :id, collection: Breed.order(:name), prompt: "Choice a breed",html: { class: "form-control"}%>
+        <%= f.association :breed , label_method: :name, value_method: :id, collection: Breed.order(:name), prompt: "Choice a breed"%>
       </div>
 
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -55,6 +55,7 @@
         <%= f.label :owner_fone ,'Owner fone'%>
         <%= f.text_field :owner_fone ,as: :string%>
       </div>
+      
     </div>
 
 
