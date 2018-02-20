@@ -39,19 +39,24 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
+gem 'jquery-ui-rails'
 
 gem 'faker'
 
+gem 'bootstrap-datepicker-rails'
+
 gem "font-awesome-rails"
 
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass'
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
 gem 'nokogiri'
 gem 'pg','~> 0.21.0'
 
 gem 'simple_form'
 gem 'devise'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'

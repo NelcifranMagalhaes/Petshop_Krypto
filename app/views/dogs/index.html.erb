@@ -20,11 +20,11 @@
     </div>
 
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-      <%= f.input :name, required: false,input_html: {value: params[:name], name: 'name', placeholder: "Name", id: "name"}  %>
+      <%= f.input :name,as: :string, required: false,input_html: {value: params[:name], name: 'name', placeholder: "Name", id: "name"}  %>
     </div>
 
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-      <%= f.input :owner_name, required: false,input_html: {value: params[:owner], name: 'owner', placeholder: "owner", id: "owner"}  %>
+      <%= f.input :owner_name,as: :string, required: false,input_html: {value: params[:owner], name: 'owner', placeholder: "owner", id: "owner"}  %>
     </div>
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">

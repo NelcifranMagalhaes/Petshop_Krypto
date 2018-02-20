@@ -1,10 +1,14 @@
 
-//= require jquery
-//= require raphael.min
-//= require bootstrap
-//= require app
-//= require bootstrap-table
+//= require jquery2
+//= require jquery-ui
 //= require jquery_ujs
+//= require bootstrap-sprockets
+
+//= require bootstrap
+//= require adminLTE/adminlte
+
+//= require bootstrap-datepicker/core
+//= require bootstrap-datetimepicker
 
 
 $(document).ready(function(){

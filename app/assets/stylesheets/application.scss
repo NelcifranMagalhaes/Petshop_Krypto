@@ -1,110 +1,73 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "AdminLTE";
-@import "morris";
-@import "app";
+@import 'bootstrap-datetimepicker';
 @import "font-awesome";
+@import "adminLTE/AdminLTE";
 @import "skins/skin-red.min";
-@import "bootstrap-table.min";
 
-@font-face {
-   font-family: 'Glyphicons Halflings';
-   src: url(asset_path('glyphicons-halflings-regular.eot'));
-   src: url(asset_path('glyphicons-halflings-regular.eot?#iefix')) format('embedded-opentype'),
-   url(asset_path('glyphicons-halflings-regular.woff')) format('woff'),
-   url(asset_path('glyphicons-halflings-regular.ttf')) format('truetype'),
-   url(asset_path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular')) format('svg');
- }
 
-.align-middle {
-  vertical-align: middle !important;
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > img {
+    border: none;
 }
 
-.callout-message {
-  font-size: 14px;
+.linktjpi {
+    font-weight: bold;
 }
 
-.bootstrap-table3 {
-  th {
-    small {
-      font-size: 70%;
-      display: block;
+.linktjpi > img {
+    width: 35px;
+    margin-top: -8px;
+    margin-left: 4px;
+}
+
+.logotjfooter {
+    width: 25px;
+    margin-top: -6px;
+    margin-left: 4px;
+}
+
+.red {
+    color: #d9534f !important;
+}
+
+.yellow {
+    color: #f0ad4e !important;
+}
+
+.fundo-branco {
+    background: #fff;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.todo-list > li .text {
+  display: unset !important;
+  margin-left: 5px;
+  font-weight: 600;
+}
+.box-body {
+  .box-footer{
+    margin: 10px -10px -10px;
+    &.inside{
+      margin: 0px !important;
     }
   }
-
-  tbody {
-    @media (min-width: 562px) {
-      td {
-        white-space: nowrap;
+  .box-header{
+      margin: -10px -10px 20px -10px;
+      &.cocoon{
+        margin: inherit !important;
       }
-    }
-  }
-}
-
-.bootstrap-table4 {
-  th {
-    small {
-      font-size: 70%;
-      display: block;
-    }
-  }
-
-  tbody {
-    @media (min-width: 562px) {
-      td {
-        white-space: nowrap;
+      &.inside{
+        margin: 0px !important;
       }
-    }
   }
 }
 
-.card-view {
-  clear: both;
-  .value {
-
-    .text-right {
-      display: '';
-      float: right;
-    }
-
-    .text-block {
-      display: block;
-    }
-  }
-}
-#calendario {
-  .fc-scroller{
-    overflow: unset !important;
-    height: auto !important;
-  }
-  .popover{
-    // z-index: 9999 !important;
-    min-width: 50%;
-    .popover-title{
-      text-align: center;
-    }
-    .popover-content{
-      padding: 9px 15px;
-    }
-  }
-  .fc-time-grid .fc-event-container{z-index: inherit;}
-}
-#container-pop{font-size: 11px;}
-
-@media (min-width: 768px) {
-  .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > span:not(.pull-right),
-  .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
-    display: block !important;
-    position: absolute;
-    width: 245px;
-    left: 50px;
-  }
-  .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > a > .pull-right-container{
-    left: 265px !important;
-  }
+.btn-saldo {
+  margin-top:25px;
 }
 
-.table tbody tr td .form-group {
-  margin: 0;
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color: #90040a !important
 }
