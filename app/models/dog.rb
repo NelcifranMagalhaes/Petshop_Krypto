@@ -7,5 +7,5 @@ class Dog < ApplicationRecord
 	validates :owner_name ,presence: true
 	validates :owner_fone ,presence: true
 
-	belongs_to :breed
+	belongs_to :breed#,optional: true
 end
