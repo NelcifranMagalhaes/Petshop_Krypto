@@ -39,7 +39,6 @@ puts "Created #{Breed.count} breeds"
                 birthday: Faker::Date.between(8.years.ago, Date.today),
                 owner_name: Faker::Name.unique.name ,
                 owner_fone: Faker::PhoneNumber.phone_number,
-                last_date: Faker::Date.between(2.years.ago, Date.today)
 
                 )
 end

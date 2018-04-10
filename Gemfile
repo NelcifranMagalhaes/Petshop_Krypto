@@ -61,4 +61,5 @@ gem 'pg','~> 0.21.0'
 gem 'simple_form'
 gem 'devise'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'friendly_id', '~> 5.1.0'
 
