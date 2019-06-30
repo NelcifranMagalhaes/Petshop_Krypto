@@ -1,7 +1,7 @@
-FactoryBot.define do
-  factory :breed do
+# FactoryBot.define do
+#   factory :breed do
   	
-    name Faker::Dog.breed
-    sequence(:characteristics) {|n| "dog number - #{n}"}
-  end
-end
+#     name Faker::Dog.breed
+#     sequence(:characteristics) {|n| "dog number - #{n}"}
+#   end
+# end

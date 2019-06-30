@@ -19,9 +19,9 @@ puts "Deleted Breeds"
 20.times do |index|
 	Breed.create!(
 
-	name: Faker::Cat.breed,
+	name: Faker::Creature::Dog.breed,
 
-	characteristics: Faker::Cat.registry
+	characteristics: Faker::Creature::Dog.size
 
     )
 
@@ -32,7 +32,7 @@ puts "Created #{Breed.count} breeds"
 
 
 50.times do |index|
-  Dog.create!(name: Faker::Cat.name,
+  Dog.create!(name: Faker::Creature::Dog.name,
               breed_id: Faker::Number.between(1,19),
                 genre: ['Macho','Fêmea'].sample,
                 castrated:[true,false].sample ,
