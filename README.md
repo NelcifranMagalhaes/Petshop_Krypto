@@ -1,10 +1,10 @@
 # README
 <strong><p>Krypto Pet shop</p></strong>
-<p>This project aims to make an API for the day control of a pethop.</p>
+<p>This project aims to make an simple interface for the daily control of a pethop.</p>
 
 
 Ruby verison = 2.6.3 
-Rails Version = 5.2.3
+Rails Version = 5.2.4.3
 Database = postgress
 
 1 - Run "bundle install" for install gems necessary for the project
