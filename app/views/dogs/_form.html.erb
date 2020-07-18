@@ -1,62 +1,58 @@
-<%= simple_form_for @dog do |f| %>
-  <% if dog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(dog.errors.count, "error") %> errors :</h2>
-
-      <ul>
-      <% dog.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="box-body">
+  <%= simple_form_for @dog, class: "form-horizontal" do |f| %>
 
-    <div class="row">
+    <% if dog.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(dog.errors.count, "error") %> errors :</h2>
+        <ul>
+        <% dog.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <%= f.association :breed , label_method: :name, value_method: :id, collection: Breed.order(:name), prompt: "Choice a breed"%>
+      <div class="form-group">
+        <label for="dog_breed_id">Email address</label>
+        <%= f.association :breed , label_method: :name, value_method: :id, collection: Breed.order(:name), input_html: { class: 'form-control' }, prompt: "Choice a breed", label: false%>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <%= f.label :genre,'Genre' %>
-        <%= f.select :genre, [ "Female", "Male" ],prompt: "Select a genre" ,class:"form-control" %>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Birthday</label>
+        <%= f.input :birthday, input_html: { class: 'form-control' }, label: false%>
       </div>
 
-    </div>
-
-    <div class="row">
-  
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <%= f.input :castrated,as: :boolean %>
+      <div class="form-group">
+        <label for="dog_name">Name</label>
+        <%= f.input :name ,as: :string, input_html: { class: 'form-control' }, label: false%>
       </div>
 
-      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-        <%= f.input :birthday%>
-      </div>
-      
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <%= f.input :name ,as: :string%>
-      </div>     
-    </div>
-
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <%= f.input :owner_name ,as: :string%>
+      <div class="form-group">
+        <label for="dog_owner_name">Owner's Name</label>
+        <%= f.input :owner_name ,as: :string, input_html: { class: 'form-control' }, label: false%>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <%= f.input :owner_fone ,as: :string%>
+      <div class="form-group">
+        <label for="dog_owner_fone">Owner's Fone</label>
+        <%= f.input :owner_fone ,as: :string, input_html: { class: 'form-control' }, label: false%>
       </div>
 
-    </div>
 
+      <div class="form-group">
+        <label for="dog_genre">Genre</label>
+        <%= f.input :genre, as: :select, collection: [ "Female", "Male" ], input_html: { class: 'form-control' }, label: false%>
+      </div>
 
-    <div class="row">
-      <%= f.submit 'Add' , :class => 'btn btn-primary btn-sm'%>
-    </div>
-      
+      <div class="checkbox">
+        <label>
+          <%= f.input :castrated, as: :boolean, class:"form-control"%>
+        </label>
+      </div>
 
-<% end %>
+      <div class="row">
+        <%= f.submit 'Add' , :class => 'btn btn-primary btn-sm'%>
+      </div>
+        
+  <% end %>
 </div>
+

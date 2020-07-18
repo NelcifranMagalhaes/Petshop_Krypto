@@ -29,7 +29,10 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- User Account: style can be found in dropdown.less -->
-
+          <% if current_user.present?%>
+            <b><%= current_user.email%><b>
+            <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: "btn btn-danger" %>
+          <%end%>
         </ul>
       </div>
     </nav>

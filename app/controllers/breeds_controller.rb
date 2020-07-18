@@ -5,7 +5,12 @@ class BreedsController < ApplicationController
   # GET /breeds
   # GET /breeds.json
   def index
-    @breeds = Breed.paginate(:page => params[:page], :per_page => 20)
+    @q = Breed.ransack(params[:q])
+    @breeds = @q.result.page(params[:page])
+
+    @breeds = @breeds.order(name: :desc)
+    @breeds = @breeds.paginate(page: params[:page], per_page: 20)
+
   end
 
   # GET /breeds/1
@@ -65,7 +70,7 @@ class BreedsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_breed
-      @breed = Breed.friendly.find(params[:id])
+      @breed = Breed.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

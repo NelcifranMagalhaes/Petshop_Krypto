@@ -10,7 +10,19 @@
 </div>
 
 <div class="box-body">
+    <%= search_form_for @q do |f| %>
 
+      <div class="form-group">
+        <%= f.search_field :name_cont, input_html: { class: 'form-control' }, placeholder: 'Breed Name' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.search_field :characteristics_cont, input_html: { class: 'form-control' }, placeholder: 'Breed characteristics'%>
+      </div>
+
+      <%= f.submit "Search",class: "btn btn-primary btn-sm"%>
+  </div>
+<% end %>
 
 <div class="row">
 <div class="col-md-12">

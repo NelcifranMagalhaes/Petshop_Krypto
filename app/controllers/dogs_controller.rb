@@ -1,38 +1,20 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:show, :edit, :update, :destroy]
-  before_action :set_breeds,only:[:index,:create]
-  before_action :authenticate_user!, except: [:index,:show]
+  before_action :set_dog, only: %i[show edit update destroy]
+  before_action :set_breeds, only: %i[index create]
+  before_action :authenticate_user!, except: %i[index show]
   # GET /dogs
   # GET /dogs.json
   def index
-    @name = params[:name]
-    @owner_name = params[:owner]
-    @breed = params[:breed]
-
-
-    @dogs = Dog.all
-
-    if @genre.present? || @name.present? || @owner_name.present? || @breed.present? 
-
-      #@dogs = @dogs.where(genre: @genre ) unless @genre.blank?
-      @dogs = @dogs.where(name: @name) unless @name.blank?
-      @dogs = @dogs.where(owner_name: @owner_name) unless @owner_name.blank?
-
-      #@dogs = @dogs.where(castrated: @castrated == 'Sim' ? true : false) unless @castrated.blank?
-
-      @dogs = @dogs.where(breed: @breed) unless @breed.blank?
-
-    end
+    @q = Dog.ransack(params[:q])
+    @dogs = @q.result.includes(:breed).page(params[:page])
 
     @dogs = @dogs.order(birthday: :desc)
-    @dogs = @dogs.paginate(:page => params[:page], :per_page => 20) 
-
+    @dogs = @dogs.paginate(page: params[:page], per_page: 20)
   end
 
   # GET /dogs/1
   # GET /dogs/1.json
-  def show
-  end
+  def show; end
 
   # GET /dogs/new
   def new
@@ -40,8 +22,7 @@ class DogsController < ApplicationController
   end
 
   # GET /dogs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /dogs
   # POST /dogs.json
@@ -84,18 +65,18 @@ class DogsController < ApplicationController
   end
 
   private
-    def set_breeds
 
-      @breeds = Breed.all
+  def set_breeds
+    @breeds = Breed.all
+  end
 
-    end
-    # Use callbacks to share common setup or constraints between actions.
-    def set_dog
-      @dog = Dog.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_dog
+    @dog = Dog.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def dog_params
-      params.require(:dog).permit(:breed_id, :genre, :castrated, :birthday, :name, :owner_name, :owner_fone)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def dog_params
+    params.require(:dog).permit(:breed_id, :genre, :castrated, :birthday, :name, :owner_name, :owner_fone)
+  end
 end
