@@ -1,0 +1,36 @@
+
+<%= simple_form_for @disease, class: "form-horizontal" do |f| %>
+
+    <% if disease.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(disease.errors.count, "error") %> errors :</h2>
+        <ul>
+        <% disease.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="row">
+  <div class="col-md-8">
+
+  <div class="form-group">
+    <%= f.label :name ,"Disease's Name"%>
+    <%= f.input :name ,as: :string, input_html: { class: 'form-control' }, label: false%>
+
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description ,'Description'%>
+    <%= f.text_field :description , {label: false, class: 'form-control', rows: 3 }%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Add' , :class => 'btn btn-primary btn-sm'%>
+  </div>
+
+<% end %>
+
+</div>
+</div>

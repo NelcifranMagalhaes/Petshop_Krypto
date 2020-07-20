@@ -72,6 +72,75 @@
           </div>
           <% end %>
       </div>   
-
   </div>
+
+  <div class="row">
+      <div class="col-lg-2> col-xs-3">
+        <%= link_to new_appointment_path do %>
+          <div class="small-box bg-blue">
+            <div class="inner">
+              <h3>New Appointments</h3>
+              <p>Add a new appointment</p>
+            </div>
+            <div class="icon">
+              <%= fa_icon "clone"%>
+            </div>
+            <div class="small-box-footer">
+              <i class="fa fa-arrow-circle-right"></i> <span>More info</span>
+            </div>
+          </div>
+          <% end %>
+      </div>
+       
+      <div class="col-lg-2> col-xs-3">
+        <%= link_to appointments_path do %>
+          <div class="small-box bg-blue">
+            <div class="inner">
+              <h3>List of Appointments</h3>
+              <p>List of all appointments</p>
+            </div>
+            <div class="icon">
+              <%= fa_icon "book"%>
+            </div>
+            <div class="small-box-footer">
+              <i class="fa fa-arrow-circle-right"></i> <span>More info</span>
+            </div>
+          </div>
+          <% end %>
+      </div>  
+       
+      <div class="col-lg-2> col-xs-3">
+        <%= link_to diseases_path do %>
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>List of Diseases</h3>
+              <p>List of all Diseases</p>
+            </div>
+            <div class="icon">
+              <%= fa_icon "book"%>
+            </div>
+            <div class="small-box-footer">
+              <i class="fa fa-arrow-circle-right"></i> <span>More info</span>
+            </div>
+          </div>
+          <% end %>
+      </div>  
+       
+      <div class="col-lg-2> col-xs-3">
+        <%= link_to new_disease_path do %>
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>New Diseases</h3>
+              <p>Add a new Diseases</p>
+            </div>
+            <div class="icon">
+              <%= fa_icon "book"%>
+            </div>
+            <div class="small-box-footer">
+              <i class="fa fa-arrow-circle-right"></i> <span>More info</span>
+            </div>
+          </div>
+          <% end %>
+      </div>  
+    </div>
 </section>
